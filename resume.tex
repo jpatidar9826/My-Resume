@@ -1,0 +1,284 @@
+%-------------------------
+% Rezume, a latex resume template for developers
+% Author : Nanu Panchamurthy
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+
+% Hope this resume template helps you land an awesome job. If you found this helpful, please consider starring the github repo here, .
+%-------------------------
+
+
+
+%------------PACKAGES----------------
+\documentclass[a4paper,11pt]{article}
+
+\usepackage{verbatim} % reimplements the "verbatim" and "verbatim*" environments
+
+\usepackage{titlesec} % provides an interface to sectioning commands i.e. custom elements
+
+\usepackage{color} % provides both foreground and background color management
+
+\usepackage{enumitem} % provides control over enumerate, itemize and description
+
+\usepackage{fancyhdr} % provides extensive facilities for constructing headers, footers and also controlling their use
+
+\usepackage{tabularx} % defines an environment tabularx, extension of "tabular" with an extra designator x, paragraph like column whose width automatically expands to fill the width of the environment
+
+\usepackage{latexsym} % provides mathematical symbols
+
+\usepackage{marvosym} % provides martin vogel's symbol font which contains various symbols
+
+\usepackage[empty]{fullpage} % sets margins to one inch and removes headers, footers etc..
+
+\usepackage[hidelinks]{hyperref} % removes color and shadow of hyperlinks
+
+\usepackage[normalem]{ulem} % provides "\ul" (uline) command which will break at line breaks
+
+\usepackage[english]{babel} % provides culturally determined typographical rules for wide range of languages
+%-----------------------------------------
+
+\input glyphtounicode % converts glyph names to unicode
+\pdfgentounicode=1 % ensures pdfs generated are ats readable
+
+%----------FONT OPTIONS-------------------
+\usepackage[default]{sourcesanspro} % uses the font source sans pro
+\urlstyle{same} % changes url font from default urlfont to font being used by the document
+%-----------------------------------------
+
+
+%----------MARGIN OPTIONS-----------------
+\pagestyle{fancy} % set page style to one configured by fancyhdr
+\fancyhf{} % clear all header and footer fields
+
+\renewcommand{\headrulewidth}{0in} % sets thickness of linerule under header to zero
+\renewcommand{\footrulewidth}{0in} % sets thickness of linerule over footer to zero
+
+\setlength{\tabcolsep}{0in} % sets thickness of column separator in tables to zero
+
+% origin of the document is one inch from the top and from and the left
+% oddsidemargin and evensidemargin both refer to the left margin
+% right margin is indirectly set using oddsidemargin
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\topmargin}{-0.6in}
+
+\addtolength{\textwidth}{1.0in} % sets width of text area in the page to one inch
+\addtolength{\textheight}{1.0in} % sets height of text area in the page to one inch
+
+\raggedbottom{} % makes all pages the height of current page, no extra vertical space added
+\raggedright{} % makes all pages the width of current page, no extra horizontal space added
+%------------------------------------------
+
+
+%--------SECTIONING COMMANDS---------
+% \titleformat{<command>}
+%   [<shape>]{<format>}{<label>}{<sep>}
+%     {<before-code>}[<after-code>]
+
+% command is the sectioning command to be redefined
+% shape is the style of the font; scshape stands for small caps style
+% format is the format to be applied to whole title- label and text; absent here
+% label defines the label
+% sep is the horizontal separation between label and title body
+% before-code is the code to be executed before
+% after-code is the code to be executed after
+
+\titleformat{\section}
+  {\scshape\large}{}
+    {0em}{\color{blue}}[\color{black}\titlerule\vspace{0pt}]
+%-------------------------------------
+
+
+%--------REDEFINITIONS----------------
+% redefines the style of the bullet point
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+% redefines the underline depth to 2pt
+\renewcommand{\ULdepth}{2pt}
+%-------------------------------------
+
+
+%--------CUSTOM COMMANDS--------------
+%\vspace{} defines a vertical space of given size, modifying this in custom commands can help stretch or shrink resume to remove or add content
+
+% resumeItem renders a bullet point
+\newcommand{\resumeItem}[1]{
+  \item\small{#1}
+}
+
+% commands to start and end itemization of resumeItem, rightmargin set to 0.11in to avoid the overflow of resumetItem beyond whatever resumeItemHeading is being used
+\newcommand{\resumeItemListStart}{\begin{itemize}[rightmargin=0.11in]}
+\newcommand{\resumeItemListEnd}{\end{itemize}}
+
+% resumeSectionType renders a bolded type to be used under a section, used as skill type here, middle element is used to keep ":"s in the same vertical line
+\newcommand{\resumeSectionType}[3]{
+  \item\begin{tabular*}{0.96\textwidth}[t]{
+    p{0.14\linewidth}p{0.02\linewidth}p{0.8\linewidth}
+  }
+    \textbf{#1} & #2 & #3
+  \end{tabular*}\vspace{-7pt}
+}
+
+% resumeTrioHeading renders three elements in three columns with second element being italicized and first element bolded, can be used for projects with three elements
+\newcommand{\resumeTrioHeading}[3]{
+  \item\small{
+    \begin{tabular*}{0.96\textwidth}[t]{
+      l@{\extracolsep{\fill}}c@{\extracolsep{\fill}}r
+    }
+      \textbf{#1} & \textit{#2} & #3
+    \end{tabular*}
+  }
+}
+
+% resumeQuadHeading renders four elements in a two columns with the second row being italicized and first element of first row bolded, can be used for experience and projects with four elements
+\newcommand{\resumeQuadHeading}[4]{
+  \item
+  \begin{tabular*}{0.96\textwidth}[t]{l@{\extracolsep{\fill}}r}
+    \textbf{#1} & #2 \\
+    \textit{\small#3} & \textit{\small #4} \\
+  \end{tabular*}
+}
+
+% resumeQuadHeadingChild renders the second row of resumeQuadHeading, can be used for experience if different roles in the same company need to added
+\newcommand{\resumeQuadHeadingChild}[2]{
+  \item
+  \begin{tabular*}{0.96\textwidth}[t]{l@{\extracolsep{\fill}}r}
+    \textbf{\small#1} & {\small#2} \\
+  \end{tabular*}
+}
+
+% commands to start and end itemization of resumeQuadHeading, lefmargin for left indent of 0.15in for resumeItems
+\newcommand{\resumeHeadingListStart}{
+  \begin{itemize}[leftmargin=0.15in, label={}]
+}
+\newcommand{\resumeHeadingListEnd}{\end{itemize}}
+%-------------------------------------------
+
+
+%__________________RESUME____________________
+% You can rearrange sections in any order you may prefer
+\begin{document}
+
+%-----------CONTACT DETAILS------------------
+% Make sure all the details are correct, you can add more links in the first row of second column if needed
+
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+  \textbf{\Huge Jayant Patidar \vspace{2pt}} & % row = 1, col = 1
+  Address: Ratlam, Madhya Pradesh, India \\ % row = 1, col = 2
+  \href{https://www.linkedin.com/in/jayant-patidar-176163203/}{\uline{LinkedIn}} $|$ % row = 2, col = 1
+  \href{https://github.com/jpatidar9826}{\uline{GitHub}} $|$ % row = 2, col = 1
+  \href{https://leetcode.com/jane-doe}{\uline{Leetcode}} & % row = 2, col = 1
+  Email: \href{mailto:jayant.patidar9109@gmail.com}{\uline{jayant.patidar9109@gmail.com}} $|$ % row = 2, col = 2
+  Mobile: 9109853151 \\ % row = 2, col = 2
+\end{tabular*}
+%--------------------------------------------
+
+
+%-----------SUMMARY--------------------------
+% Keep this short, simple and straigth to point
+
+%\section{Full Stack Developer}
+%\small{
+%  I am a highly skilled web developer with over \textbf{3 years of experience} in \textbf{HTML, CSS, JavaScript, and PHP}. % I have knowledge of popular frameworks such as \textbf{React, Angular, and Vue.js} and experience with REST APIs and MVC % % frameworks.
+% }
+%--------------------------------------------
+
+
+%-----------EDUCATION-------------------------
+% Mention your CGPA, if its good, in the first row of second column
+
+\section{Education}
+  \resumeHeadingListStart{}
+    \resumeQuadHeading{Madhav Institute of Technology And Science}{Gwalior [M.P.]}
+    {Bachelor of Technology in Information Technology}{Dec 2020 -- July 2024}
+  \resumeHeadingListEnd{}
+%---------------------------------------------
+
+
+
+
+
+%-----------EXPERIENCE-----------------------
+% Distill all your talking points to small bullet points which follow the pattern "challenge-action-result" for maximum efficiency. Try to quantify (use numbers) your points whenver possible, highlist words of importance
+
+\section{Experience}
+\resumeHeadingListStart{}
+  \resumeQuadHeading{Full Stack(MERN) Web Developer Intern}{June 2023}
+  {Kranti Education}{Remote -- Chittorgarh [R.J.], India}
+    \resumeItemListStart{}
+      \resumeItem{Contributed to the enhancement of an online education platform. Successfully recreated the home page, implemented new features such as modules and quiz pages for seamless video lecture viewing and assignment completion. using \textbf{HTML, CSS, JavaScript, React.js and Next.js.}}
+      \resumeItem{Worked with \textbf{REST APIs and Postman} to retrieve and display data from backend - \textbf{Node.js} and database - \textbf{MongoDB.}}
+      \resumeItem{Responsible for managing \textbf{GitHub} for ensuring smooth collaboration, efficient code handling and the deployment of both frontend and backend components, ensuring a streamlined and reliable user experience.}
+    \resumeItemListEnd{}
+
+  
+\resumeHeadingListEnd{}
+%---------------------------------------------
+
+%-----------Oganisations-----------------------
+
+
+\section{Organisations}
+\resumeHeadingListStart{}
+  \resumeQuadHeading{Social Media Team - Volunteer}{Aug 2022 -- Present}
+  {Helping Hut NGO - Team Gwalior}{ New Delhi, India}  
+\resumeHeadingListEnd{}
+%---------------------------------------------
+
+
+%--------------SKILLS------------------------
+% Add or remove resumeSectionTypes according to your needs
+
+\section{Technical Skills}
+  \resumeHeadingListStart{}
+    \resumeSectionType{Languages}{:}{C++, JavaScript, HTML, CSS}
+    \resumeSectionType{Technologies}{:}{React.js, Bootstrap, Next.js , Express, Node.js, MongoDB, Linux, Github, PostmanAPI Testing}
+    \resumeSectionType{Libraries}{:}{Material, React Router, TwitterApi, Puppeteer, OpenAI}
+  \resumeHeadingListEnd{}
+%--------------------------------------------
+
+
+
+%-----------PROJECTS--------------------------
+% Use resumeQuadHeading if four elements are feasible (ex: demo video link), else use resumeTrioHeading. Keep the bullet points simple and concise and try to cover wide variety of skills you have used to build these projects
+
+\section{Projects}
+  \resumeHeadingListStart{}
+    \resumeTrioHeading{\href{https://my-college-project-site.onrender.com/}{\uline{Resume Builder Web Application}}}{HTML, CSS, JavaScript, Bootstrap, Node.js, MongoDB.}{\href{https://github.com/jpatidar9826/Cproject2}{\uline{Source Code}}}
+      \resumeItemListStart{}
+        \resumeItem{Designed and developed a clean and modern MVC WebApp using \textbf{HTML, CSS, JavaScript, Bootstrap, Node.js, MongoDB}}
+        \resumeItem{This Web Application automates the resume creation process using pre-designed templates. Users simply need to ﬁll out a form, and the application will generate a professional resume in PDF format for download.}
+        \resumeItem{Maintained code with \textbf{Github} and deployed on Render. {\href{https://raysume-react-app.onrender.com/}{\uline{Version 2 in development}}}}
+      \resumeItemListEnd{}
+
+      \resumeTrioHeading{\uline{Twitter Bot}}{Node.js, TwitterApi, JavaScript, Github, Postman}{\href{https://github.com/jpatidar9826/twibot}{\uline{Source Code}}}
+      \resumeItemListStart{}
+        \resumeItem{Versatile bot proficient in delivering witty, sarcastic replies to tweets using \textbf{OpenAI API}, sharing entertaining jokes using \textbf{Jokes API}, and providing interactive Twitter support with screenshot sharing using \textbf{Puppeteer}.}
+        \resumeItem{Maintained code with \textbf{Github} and tested with \textbf{Postman.}}
+      \resumeItemListEnd{}
+  \resumeHeadingListEnd{}
+%--------------------------------------------
+
+
+%----------------OTHERS----------------------
+% You can add your acheivements, accolades, certifications etc. here.
+
+\section{Certifications}
+  \resumeItemListStart{}
+    \resumeItem{\href{https://coursera.org/share/d90c9bb5e5f2df54df0adcca08c48bf7}{\uline{Meta Front-End Developer Professional Certificate}}}
+    \resumeItem{\href{https://api.badgr.io/public/assertions/0X9F6PZITLiIjadC-0Fb0g}{\uline{Postman API Fundamentals Student Expert}}}
+    \resumeItem{\href{https://www.udemy.com/certificate/UC-8329afaa-c3e3-490f-a541-1e7da1237daf/}{\uline{Udemy: React, NodeJS, Express and MongoDB - The MERN Fullstack Guide}}}
+    
+   
+  \resumeItemListEnd{}
+%--------------------------------------------
+
+% You can add your acheivements, accolades, certifications etc. here.
+
+\section{Acheivements}
+  \resumeItemListStart{}
+    \resumeItem{Solved 500 plus coding problems on - {\href{https://auth.geeksforgeeks.org/user/jpatidar98261}{\uline{GFG}}}, {\href{https://www.interviewbit.com/profile/jayant-patidar_460}{\uline{InterviewBit}}}, {\href{https://www.codingninjas.com/studio/profile/552e45e0-8a76-41bd-ba63-4b1e48570a62}{\uline{CodingNinjas}}}, {\href{https://www.codechef.com/users/jpatidar9826}{\uline{CodeChef}}}, {\href{https://codeforces.com/profile/jpatidar9826}{\uline{Codeforces}}}.}
+    \resumeItem{Published article on GeeksforGeeks - {\href{https://www.geeksforgeeks.org/tweet-using-node-js-and-twitter-api/}{\uline{Tweet using Node.js and Twitter API}}}.}   
+  \resumeItemListEnd{}
+%--------------------------------------------
+
+\end{document}
