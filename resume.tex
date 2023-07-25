@@ -59,7 +59,7 @@
 % oddsidemargin and evensidemargin both refer to the left margin
 % right margin is indirectly set using oddsidemargin
 \addtolength{\oddsidemargin}{-0.5in}
-\addtolength{\topmargin}{-0.6in}
+\addtolength{\topmargin}{-0.5in}
 
 \addtolength{\textwidth}{1.0in} % sets width of text area in the page to one inch
 \addtolength{\textheight}{1.0in} % sets height of text area in the page to one inch
@@ -112,7 +112,7 @@
 % resumeSectionType renders a bolded type to be used under a section, used as skill type here, middle element is used to keep ":"s in the same vertical line
 \newcommand{\resumeSectionType}[3]{
   \item\begin{tabular*}{0.96\textwidth}[t]{
-    p{0.14\linewidth}p{0.02\linewidth}p{0.8\linewidth}
+    p{0.22\linewidth}p{0.02\linewidth}p{0.8\linewidth}
   }
     \textbf{#1} & #2 & #3
   \end{tabular*}\vspace{-7pt}
@@ -166,7 +166,7 @@
   Address: Ratlam, Madhya Pradesh, India \\ % row = 1, col = 2
   \href{https://www.linkedin.com/in/jayant-patidar-176163203/}{\uline{LinkedIn}} $|$ % row = 2, col = 1
   \href{https://github.com/jpatidar9826}{\uline{GitHub}} $|$ % row = 2, col = 1
-  \href{https://leetcode.com/jane-doe}{\uline{Leetcode}} & % row = 2, col = 1
+  \href{https://auth.geeksforgeeks.org/user/jpatidar98261}{\uline{GFG}} & % row = 2, col = 1
   Email: \href{mailto:jayant.patidar9109@gmail.com}{\uline{jayant.patidar9109@gmail.com}} $|$ % row = 2, col = 2
   Mobile: 9109853151 \\ % row = 2, col = 2
 \end{tabular*}
@@ -189,7 +189,7 @@
 \section{Education}
   \resumeHeadingListStart{}
     \resumeQuadHeading{Madhav Institute of Technology And Science}{Gwalior [M.P.]}
-    {Bachelor of Technology in Information Technology}{Dec 2020 -- July 2024}
+    {Bachelor of Technology in Information Technology - CGPA - 7.34}{Dec 2020 -- July 2024}
   \resumeHeadingListEnd{}
 %---------------------------------------------
 
@@ -201,26 +201,22 @@
 % Distill all your talking points to small bullet points which follow the pattern "challenge-action-result" for maximum efficiency. Try to quantify (use numbers) your points whenver possible, highlist words of importance
 
 \section{Experience}
+%\resumeHeadingListStart{}
+%  \resumeQuadHeading{Martian Summer Internship and Training Program}{July 2023 - Aug 2023}
+%  {Persistent Systems }{Remote -- India}
+%    \resumeItemListStart{}
+%      \resumeItem{Enthusiastically pursued in-depth technical training from industry experts, covering a range 
+% of subjects, including Operating Systems, DBMS, Data Structures and Algorithms, and OOPS.}
+%    \resumeItemListEnd{}
+%\resumeHeadingListEnd{}
 \resumeHeadingListStart{}
-  \resumeQuadHeading{Full Stack(MERN) Web Developer Intern}{June 2023}
+  \resumeQuadHeading{Full Stack(MERN) Web Developer Intern}{June 2023 - July 2023}
   {Kranti Education}{Remote -- Chittorgarh [R.J.], India}
     \resumeItemListStart{}
-      \resumeItem{Contributed to the enhancement of an online education platform. Successfully recreated the home page, implemented new features such as modules and quiz pages for seamless video lecture viewing and assignment completion. using \textbf{HTML, CSS, JavaScript, React.js and Next.js.}}
-      \resumeItem{Worked with \textbf{REST APIs and Postman} to retrieve and display data from backend - \textbf{Node.js} and database - \textbf{MongoDB.}}
-      \resumeItem{Responsible for managing \textbf{GitHub} for ensuring smooth collaboration, efficient code handling and the deployment of both frontend and backend components, ensuring a streamlined and reliable user experience.}
+      \resumeItem{Contributed to the enhancement of an online education platform. Successfully recreated the home page, implemented new features such as modules and quiz pages for seamless video lecture viewing and assignment completion. using HTML, CSS, JavaScript, React.js and Next.js.}
+      \resumeItem{Worked with REST APIs and Postman to retrieve and display data from backend - Node.js and database - MongoDB.}
+      \resumeItem{Successfully deployed Frontend and Backend on Netlify and Render for streamlined user experience. }
     \resumeItemListEnd{}
-
-  
-\resumeHeadingListEnd{}
-%---------------------------------------------
-
-%-----------Oganisations-----------------------
-
-
-\section{Organisations}
-\resumeHeadingListStart{}
-  \resumeQuadHeading{Social Media Team - Volunteer}{Aug 2022 -- Present}
-  {Helping Hut NGO - Team Gwalior}{ New Delhi, India}  
 \resumeHeadingListEnd{}
 %---------------------------------------------
 
@@ -231,8 +227,9 @@
 \section{Technical Skills}
   \resumeHeadingListStart{}
     \resumeSectionType{Languages}{:}{C++, JavaScript, HTML, CSS}
-    \resumeSectionType{Technologies}{:}{React.js, Bootstrap, Next.js , Express, Node.js, MongoDB, Linux, Github, PostmanAPI Testing}
-    \resumeSectionType{Libraries}{:}{Material, React Router, TwitterApi, Puppeteer, OpenAI}
+    \resumeSectionType{Technologies}{:}{Node.js, MongoDB, Linux, Github, PostmanAPI Testing}
+    \resumeSectionType{Libraries/Frameworks}{:}{Material, React Router, TwitterApi, Puppeteer, React.js, Bootstrap, Next.js , Express}
+    \resumeSectionType{Courses}{:}{Data Structures and Algorithms, OOPS, DBMS, Operating Systems}
   \resumeHeadingListEnd{}
 %--------------------------------------------
 
@@ -245,15 +242,15 @@
   \resumeHeadingListStart{}
     \resumeTrioHeading{\href{https://my-college-project-site.onrender.com/}{\uline{Resume Builder Web Application}}}{HTML, CSS, JavaScript, Bootstrap, Node.js, MongoDB.}{\href{https://github.com/jpatidar9826/Cproject2}{\uline{Source Code}}}
       \resumeItemListStart{}
-        \resumeItem{Designed and developed a clean and modern MVC WebApp using \textbf{HTML, CSS, JavaScript, Bootstrap, Node.js, MongoDB}}
+        \resumeItem{Designed and developed a clean and modern Model-View-Controller WebApp using HTML, CSS, JavaScript, Bootstrap, Node.js, MongoDB.}
         \resumeItem{This Web Application automates the resume creation process using pre-designed templates. Users simply need to ﬁll out a form, and the application will generate a professional resume in PDF format for download.}
-        \resumeItem{Maintained code with \textbf{Github} and deployed on Render. {\href{https://raysume-react-app.onrender.com/}{\uline{Version 2 in development}}}}
+        \resumeItem{Maintained code with Github and deployed on Render. {\href{https://raysume-react-app.onrender.com/}{\uline{Version 2 in development}}}.}
       \resumeItemListEnd{}
 
       \resumeTrioHeading{\uline{Twitter Bot}}{Node.js, TwitterApi, JavaScript, Github, Postman}{\href{https://github.com/jpatidar9826/twibot}{\uline{Source Code}}}
       \resumeItemListStart{}
-        \resumeItem{Versatile bot proficient in delivering witty, sarcastic replies to tweets using \textbf{OpenAI API}, sharing entertaining jokes using \textbf{Jokes API}, and providing interactive Twitter support with screenshot sharing using \textbf{Puppeteer}.}
-        \resumeItem{Maintained code with \textbf{Github} and tested with \textbf{Postman.}}
+        \resumeItem{Versatile bot proficient in delivering witty, sarcastic replies to tweets using OpenAI API, sharing entertaining jokes using Jokes API, and providing interactive Twitter support with screenshot sharing using Puppeteer.}
+        \resumeItem{API's tested using Postman API Testing tool and version control using Github.}
       \resumeItemListEnd{}
   \resumeHeadingListEnd{}
 %--------------------------------------------
@@ -267,17 +264,18 @@
     \resumeItem{\href{https://coursera.org/share/d90c9bb5e5f2df54df0adcca08c48bf7}{\uline{Meta Front-End Developer Professional Certificate}}}
     \resumeItem{\href{https://api.badgr.io/public/assertions/0X9F6PZITLiIjadC-0Fb0g}{\uline{Postman API Fundamentals Student Expert}}}
     \resumeItem{\href{https://www.udemy.com/certificate/UC-8329afaa-c3e3-490f-a541-1e7da1237daf/}{\uline{Udemy: React, NodeJS, Express and MongoDB - The MERN Fullstack Guide}}}
-    
-   
+    \resumeItem{\href{https://www.udemy.com/certificate/UC-d9b53b4a-f54c-476b-800c-593d1212be9f/}{\uline{Udemy:
+The Complete 2023 Web Development Bootcamp}}}
   \resumeItemListEnd{}
 %--------------------------------------------
 
 % You can add your acheivements, accolades, certifications etc. here.
 
-\section{Acheivements}
+\section{Acheivements/Activities}
   \resumeItemListStart{}
     \resumeItem{Solved 500 plus coding problems on - {\href{https://auth.geeksforgeeks.org/user/jpatidar98261}{\uline{GFG}}}, {\href{https://www.interviewbit.com/profile/jayant-patidar_460}{\uline{InterviewBit}}}, {\href{https://www.codingninjas.com/studio/profile/552e45e0-8a76-41bd-ba63-4b1e48570a62}{\uline{CodingNinjas}}}, {\href{https://www.codechef.com/users/jpatidar9826}{\uline{CodeChef}}}, {\href{https://codeforces.com/profile/jpatidar9826}{\uline{Codeforces}}}.}
     \resumeItem{Published article on GeeksforGeeks - {\href{https://www.geeksforgeeks.org/tweet-using-node-js-and-twitter-api/}{\uline{Tweet using Node.js and Twitter API}}}.}   
+    \resumeItem{Dedicated volunteer at Helping Hut NGO, Gwalior, contributing to social media initiatives since August 2022.}
   \resumeItemListEnd{}
 %--------------------------------------------
 
